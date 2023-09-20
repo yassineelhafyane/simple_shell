@@ -14,18 +14,18 @@ int path_cmd(char **cmd)
 	value = _strtok(path, ":");
 	while (value != NULL)
 	{
-		cmd_path = build(*cmd, value);
-		if (stat(cmd_path, &buf) == 0)
+		path_cmd = build(*cmd, value);
+		if (stat(path_cmd, &buf) == 0)
 		{
-			*cmd = _strdup(cmd_path);
-			free(cmd_path);
-			free(path);
+			*cmd = _strdup(path_cmd);
+			free(path_cmd);
+			free(cmd);
 			return (0);
 		}
-		free(cmd_path);
+		free(path_cmd);
 		value = _strtok(NULL, ":");
 	}
-	free(path);
+	free(cmd);
 
 	return (1);
 }
