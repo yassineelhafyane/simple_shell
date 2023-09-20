@@ -1,6 +1,5 @@
 #include "shell.h"
 
-
 int _myexit(info_t *infos)
 {
 		int exitcheck;
@@ -22,6 +21,7 @@ int _myexit(info_t *infos)
 				infos->err_num = -1;
 					return (-2);
 }
+
 
 
 int _mycd(info_t *ifos)
